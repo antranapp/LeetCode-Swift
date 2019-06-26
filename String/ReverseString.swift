@@ -7,7 +7,16 @@
  */
 
 class ReverseString {
-    func reverseString(s: String) -> String {
-        return String(s.reversed())
+    func reverseString(_ s: inout [Character]) {
+        var left = 0
+        var right = s.count - 1
+        while left < right {
+            let tmp = s[left]
+            s[left] = s[right]
+            s[right] = tmp
+
+            left += 1
+            right -= 1
+        }
     }
 }
